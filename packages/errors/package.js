@@ -13,3 +13,9 @@ Package.onUse(function(api) {
   if (api.export)
     api.export('Errors');
 });
+
+Package.onTest(function(api) {
+  api.use('navyboys:errors', 'client');
+  api.use(['templating', 'tinytest', 'test-helpers'], 'client');
+  api.addFiles('errors_tests.js', 'client');
+});
